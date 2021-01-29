@@ -1,0 +1,57 @@
+{
+  "name": "bpd-docs",
+  "version": "0.1.0",
+  "description": "Build elements from JSON",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "/dist/index.js",
+    "/dist/index.js.map",
+    "/dist/index.min.js",
+    "/dist/index.min.js.map",
+    "/dist/index.d.ts",
+    "/dist/esm/index.js",
+    "/dist/esm/index.d.ts",
+    "/dist/esm/**/*"
+  ],
+  "scripts": {
+    "build": "webpack --config webpack.production.js",
+    "build:minify": "webpack --config webpack.build.minify.js",
+    "test": "karma start karma.config.js",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "prod": "npm run build && npm run build:esm && npm run build:minify",
+    "dev": "webpack-dev-server --config webpack.development.js"
+  },
+  "bugs": {
+    "url": "https://github.com/bpd-d/bpd-docs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpd-d/bpd-docs.git"
+  },
+  "homepage": "https://github.com/bpd-d/bpd-docs#readme",
+  "keywords": [
+    "bpd",
+    "docs",
+    "json"
+  ],
+  "author": "BPD",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "^3.5.12",
+    "clean-webpack-plugin": "^3.0.0",
+    "dts-bundle": "^0.7.3",
+    "jasmine": "^3.6.1",
+    "karma-typescript": "^5.0.3",
+    "serialize-javascript": ">=2.1.1",
+    "terser-webpack-plugin": "^3.1.0",
+    "typescript-transform-paths": "^1.1.10",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-karma-jasmine": "^4.0.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
